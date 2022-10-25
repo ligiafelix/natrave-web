@@ -1,4 +1,4 @@
-import { Icon } from '~/components'
+import { Icon, Card } from '~/components'
 export const Dashboard = () => (
     <div className="">
 
@@ -18,30 +18,33 @@ export const Dashboard = () => (
                     <h3 className='text-2xl font-blod'>Qual é o seu palpite?</h3>
                 </div>
             </section>
-
-
-            <section id='content' className='container max-w-3xl p-4'>
-
-                <div className='rounded-xl border border-gray-300 p-4 text-center'>
-                    <span className='text-sm md:text-base text-gray-700 font-bold'>7:00</span>
-
-                    <div className='flex space-x-4 justify-center items-center'>
-
-                        <span className='uppercase'>sui</span>
-                        <img src="/imgs/flags/sui.png" />
-
-                        <input type="number" className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-700 text-xl text-center' />
-                        <span className='text-red-500 font-bold'>X</span>
-                        <input type="number" className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-700 text-xl text-center' />
-
-                        <img src="/imgs/flags/cam.png" />
-                        <span className='uppercase'>cam</span>
-
-
-
-                    </div>
+            <section id='content' className='container max-w-3xl p-4 space-y-4'>
+               
+                <div className='flex'>
+                    <Icon name="back" className="w-6"/>
+                    <span>24 de novembro</span>
+                    <Icon name="arrowRight" className="w-6"/>
                 </div>
 
+                <div className='space-y-4'>
+                    <Card
+                        timeA={{ slug: 'sui' }}
+                        timeB={{ slug: 'cam' }}
+                        match={{ time: '7:00' }}
+                    />
+
+                    <Card
+                        timeA={{ slug: 'uru' }}
+                        timeB={{ slug: 'cor' }}
+                        match={{ time: '7:00' }}
+                    />
+
+                    <Card
+                        timeA={{ slug: 'por' }}
+                        timeB={{ slug: 'gan' }}
+                        match={{ time: '7:00' }}
+                    />
+                </div>
             </section>
         </main>
     </div>
