@@ -1,3 +1,5 @@
+import { useLocalStorage } from "react-use";
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -9,6 +11,7 @@ import { Home } from './Home'
 import { Login } from './Login'
 import { Signup } from './Signup'
 import { Dashboard } from './Dashboard'
+import { Profile } from './Profile'
 
 const router = createBrowserRouter([
   {
@@ -28,9 +31,12 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
   },
+  {
+    path: "/:username",
+    element: <Profile />,
+  },
 
 ]);
 
-export const Router = () => (
-  <RouterProvider router={router} />
-)
+export const Router = () => 
+ <RouterProvider router={router} />
